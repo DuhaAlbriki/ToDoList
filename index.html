@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do Today</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+  <!-- Interactive background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Main container -->
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden relative z-10">
+    <!-- Header -->
+    <div class="bg-[#9B70E5] text-white p-4 flex items-center justify-center relative">
+      <div id="langIcon" class="language-icon-container absolute left-4 flex items-center justify-evenly rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 cursor-pointer transition-all duration-200">
+        <span id="langE" class="font-bold text-sm">E</span>
+        <span id="langAr" class="font-bold text-sm">ع</span>
+        <span id="langZh" class="font-bold text-sm">文</span>
+      </div>
+      <h1 id="appTitle" class="text-lg font-medium">What Should I Do Today? 🤔</h1>
+    </div>
+
+    <!-- Task list -->
+    <div id="taskList" class="p-6 space-y-4">
+      <div class="flex items-center space-x-4">
+        <div class="task-circle"></div>
+        <span class="task-text" data-key="task1">Create a style guide</span>
+        <span class="ml-auto cursor-pointer text-gray-400 trash-icon hover:text-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+        </span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="task-circle completed"></div>
+        <span class="task-text completed" data-key="task2">Send out prototypes</span>
+        <span class="ml-auto cursor-pointer text-gray-400 trash-icon hover:text-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+        </span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="task-circle"></div>
+        <span class="task-text" data-key="task3">Review "About" page legibility</span>
+        <span class="ml-auto cursor-pointer text-gray-400 trash-icon hover:text-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+        </span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="task-circle"></div>
+        <span class="task-text" data-key="task4">Check color contrast</span>
+        <span class="ml-auto cursor-pointer text-gray-400 trash-icon hover:text-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <!-- Input -->
+<div id="newTaskInputContainer" class="p-6 pt-0 transition-all duration-300 ease-in-out transform scale-y-0 origin-top">
+  <div class="flex items-center">
+    <input type="text" id="newTaskInput" placeholder="Enter a new task..." 
+      class="flex-1 rounded-lg border border-gray-300 px-4 py-2 h-12 focus:outline-none focus:ring-2 focus:ring-[#9B70E5]">
+    <button id="addTaskButton" class="bg-[#9B70E5] text-white font-medium px-4 h-12 rounded-lg ml-2">
+      Add
+    </button>
+  </div>
+</div>
+
+
+
+
+    <!-- New Task Button -->
+    <div class="p-6 pt-0">
+      <button id="showNewTaskButton" class="w-full bg-[#9B70E5] text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
+        <span class="font-medium">+ New Task</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

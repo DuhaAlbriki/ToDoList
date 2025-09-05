@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f6f9;
+}
+
+html[lang="ar"] #addTaskButton {
+  margin-right: 0.5rem; /* small extra space in Arabic only */
+  margin-left: 0;       /* reset left margin if needed */
+}
+
+/* Custom task circle */
+.task-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #D1D5DB;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.task-circle.completed {
+  background-color: #9B70E5;
+  border-color: #9B70E5;
+}
+
+/* Task text */
+.task-text {
+  color: #374151;
+  transition: color 0.2s;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #A0A0A0;
+}
+
+/* Background canvas */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+}
+
+/* Language icon */
+.language-icon-container {
+  width: 40px;
+  height: 40px;
+}
